@@ -20,6 +20,10 @@ The special DNS service handles DNS queries normally (recursively), except when 
 
 ## Usage
 
+```
+docker run --name steamcache-dns --restart=always -d -p 10.0.0.2:53:53/udp -e STEAMCACHE_IP=10.0.0.3 steamcache/steamcache-dns:latest
+```
+
 If all of the services you wish to run point to a single IP address, you should make sure you set USE_GENERIC_CACHE=true and set LANCACHE_IP to the IP address of the caching server.
 In this case it is highly recommended that you use some form of load balancer or reverse proxy, as running a single caching server for multiple services will result in cache clashes and will result in incorrect or corrupt data.
 
