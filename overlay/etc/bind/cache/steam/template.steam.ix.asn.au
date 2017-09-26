@@ -1,0 +1,14 @@
+$ORIGIN steam.ix.asn.au.
+$TTL	600
+@		IN	SOA	ns1 dns.steamcache.net. (
+			2015050800
+			604800
+			600
+			600
+			600 )
+@		IN	NS	ns1
+ns1		IN	A	{{ steamcache_ip }}
+steamcache	IN	A	{{ steamcache_ip }}
+
+@		IN	CNAME   steam.ix.asn.au.
+*		IN	CNAME   steam.ix.asn.au.

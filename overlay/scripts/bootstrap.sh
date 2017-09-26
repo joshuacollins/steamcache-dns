@@ -88,9 +88,13 @@ if ! [ -z "$STEAMCACHE_IP" ]; then
 	cp /etc/bind/cache/steam/template.db.content_.steampowered.com /etc/bind/cache/steam/db.content_.steampowered.com
 	cp /etc/bind/cache/steam/template.db.cs.steampowered.com /etc/bind/cache/steam/db.cs.steampowered.com
 	cp /etc/bind/cache/steam/template.db.steamcontent.com /etc/bind/cache/steam/db.steamcontent.com
+	cp /etc/bind/cache/steam/template.steam.cdn.on.net /etc/bind/cache/steam/steam.cdn.on.net
+	cp /etc/bind/cache/steam/template.steam.ix.asn.au /etc/bind/cache/steam/steam.ix.asn.au
 	sed -i -e "s%{{ steamcache_ip }}%$STEAMCACHE_IP%g" /etc/bind/cache/steam/db.content_.steampowered.com
 	sed -i -e "s%{{ steamcache_ip }}%$STEAMCACHE_IP%g" /etc/bind/cache/steam/db.cs.steampowered.com
 	sed -i -e "s%{{ steamcache_ip }}%$STEAMCACHE_IP%g" /etc/bind/cache/steam/db.steamcontent.com
+	sed -i -e "s%{{ steamcache_ip }}%$STEAMCACHE_IP%g" /etc/bind/cache/steam/steam.cdn.on.net
+	sed -i -e "s%{{ steamcache_ip }}%$STEAMCACHE_IP%g" /etc/bind/cache/steam/steam.ix.asn.au
 	sed -i -e "s%#ENABLE_STEAM#%%g" /etc/bind/cache.conf
 fi
 
